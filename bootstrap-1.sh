@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set up symlinks
-bash ~/dotfiles/generate-symlinks.sh
+bash ~/bootstrap/generate-symlinks.sh
 
 # Foundation
 sudo apt-get update
