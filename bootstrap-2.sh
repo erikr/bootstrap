@@ -25,6 +25,6 @@ nvim --headless +PlugInstall +qall
 
 # Conda & Mamba
 INSTALLER=Miniconda3-latest-$(uname)-$(uname -m).sh
-curl -L -O https://repo.anaconda.com/miniconda/$(INSTALLER)
-bash $(INSTALLER)
+curl -L -O https://repo.anaconda.com/miniconda/$INSTALLER
+bash $INSTALLER
 
