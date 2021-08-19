@@ -23,3 +23,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # Install plugins into neovim
 nvim --headless +PlugInstall +qall
 
+# Conda & Mamba
+curl -L -O https://github.com/conda-forgeminiforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh
+bash Mambaforge-$(uname)-$(uname -m).sh
+
