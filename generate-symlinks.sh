@@ -8,7 +8,7 @@ for file in $files; do
 done
 
 NVIM_DIR=$HOME/.config/nvim
-echo "Symlinking $DIR/init.vim to $NVIM_DIR/init.vim"
+echo "Symlinking $BOOTSTRAP_DIR/init.vim to $NVIM_DIR/init.vim"
 mkdir -p $NVIM_DIR
 rm $NVIM_DIR/init.vim
-ln -s $DIR/init.vim $NVIM_DIR/init.vim
+ln -s $BOOTSTRAP_DIR/init.vim $NVIM_DIR/init.vim
