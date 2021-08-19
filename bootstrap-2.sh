@@ -24,7 +24,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim --headless +PlugInstall +qall
 
 # Conda & Mamba
-curl -L -O https://github.com/conda-forgeminiforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh
+curl -L -O https://github.com/conda-forge/miniforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh
 
 sh Mambaforge-$(uname)-$(uname -m).sh
 
