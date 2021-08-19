@@ -1,6 +1,5 @@
-# Conda & Mamba
-curl -L -O https://github.com/conda-forgeminiforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh
-bash Mambaforge-$(uname)-$(uname -m).sh
+# Install Mamba
+conda install mamba -n base -c conda-forge
 
 # Base DSE environment
 mamba env create -f ~/bootstrap/environment.yml
