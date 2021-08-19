@@ -24,6 +24,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim --headless +PlugInstall +qall
 
 # Conda & Mamba
-curl -L -O https://repo.anaconda.com/miniconda/Miniconda3-latest-$(uname)-$(uname -m).sh
-bash Miniconda3-$(uname)-$(uname -m).sh
+INSTALLER=Miniconda3-latest-$(uname)-$(uname -m).sh
+curl -L -O https://repo.anaconda.com/miniconda/$(INSTALLER)
+bash $(INSTALLER)
 
