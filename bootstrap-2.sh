@@ -25,5 +25,5 @@ nvim --headless +PlugInstall +qall
 
 # Conda & Mamba
 curl -L -O https://repo.anaconda.com/miniconda/Miniconda3-latest-$(uname)-$(uname -m).sh
-bash Miniforge-$(uname)-$(uname -m).sh
+bash Miniconda3-$(uname)-$(uname -m).sh
 
