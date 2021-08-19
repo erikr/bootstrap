@@ -1,10 +1,10 @@
-DIR=$HOME/dotfiles
+BOOTSTRAP_DIR=$HOME/bootstrap
 files=".zshrc .aliases .vimrc .gitignore .wgetrc .tmux.conf"
 for file in $files; do
     echo "Attempting to delete $HOME/$file"
     rm $HOME/$file
-    echo "Symlinking $HOME/$file to $DIR/$file"
-    ln -s $DIR/$file $HOME/$file
+    echo "Symlinking $HOME/$file to $BOOTSTRAP_DIR/$file"
+    ln -s $BOOTSTRAP_DIR/$file $HOME/$file
 done
 
 NVIM_DIR=$HOME/.config/nvim
