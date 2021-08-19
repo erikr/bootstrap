@@ -11,3 +11,5 @@ sudo apt-get dist-upgrade
 
 # OMZ
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+sudo passwd $USER
