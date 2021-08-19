@@ -25,5 +25,6 @@ nvim --headless +PlugInstall +qall
 
 # Conda & Mamba
 curl -L -O https://github.com/conda-forgeminiforge/releases/latest/download/Mambaforge-$(uname)-$(uname -m).sh
-bash Mambaforge-$(uname)-$(uname -m).sh
+
+sh Mambaforge-$(uname)-$(uname -m).sh
 
