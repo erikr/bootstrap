@@ -27,4 +27,6 @@ nvim --headless +PlugInstall +qall
 INSTALLER=Miniconda3-latest-$(uname)-$(uname -m).sh
 curl -L -O https://repo.anaconda.com/miniconda/$INSTALLER
 bash $INSTALLER
+~/miniconda3/bin/conda init zsh
 
+rm .bash* .profile .zcompdump* .zshrc.pre-oh-my-zsh $INSTALLER

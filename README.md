@@ -31,4 +31,4 @@ Most users should never have to do this; after a machine image is set up, new VM
     ```
     bash ~/bootstrap/bootstrap-docker.sh
     ```
-    Note the Docker installation is for arm64 ([link](https://docs.docker.com/engine/install/ubuntu/)) so we can use AWS Graviton 2 EC2 instances, which are more cost-efficient.
+    Note the Docker installation is for amd64 ([link](https://docs.docker.com/engine/install/ubuntu/)), which is not compatible with AWS Graviton 2 EC2 instances.
