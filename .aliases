@@ -60,6 +60,8 @@ else # $OSTYPE must be darwin* == macos, so put mac-only aliases here
         conda update --all;
         conda clean -a;
         sudo purge;
+        sudo rm -rf ~/Library/Caches;
+        sudo rm -rf ~/Library/Containers/com.apple.mail/Data/Library/Mail\ Downloads/;
     }
 
     # Clean up LaunchServices to remove duplicates in the “Open With” menu,
@@ -139,6 +141,16 @@ function filesizes() {
     find . -type f -print0 | xargs -0 ls -l | awk '{ n=int(log($5)/log(2)); if (n<10) { n=10; } size[n]++ } END { for (i in size) printf("%d %d\n", 2^i, size[i]) }' | sort -n | awk 'function human(x) { x[1]/=1024; if (x[1]>=1024) { x[2]++; human(x) } } { a[1]=$1; a[2]=0; human(a); printf("%3d%s: %6d\n", a[1],substr("kMGTEPYZ",a[2]+1,1),$2) }'
 }
 
+# Remove all installed conda environments except base
+function conda_purge() {
+    for i in `conda env list|awk '{print $1}'|egrep -v 'base|#'|tr '\n' ' '`
+    do
+        echo $i
+        conda env remove --name $i
+    done
+    conda clean --all -f
+}
+
 # sts-ecg project: print AUCs in a results directory
 # Log files are stored in subdirectories of current directly: ./*/log*
 # Log files contain output like: ROC AUC * {label} * = 0.NNN
@@ -158,50 +170,10 @@ function aucs() {
 		tac "$file" | grep -m 1 -hoE "ROC AUC.*$1.*= 0.[0-9]{3}" | grep -hoE "0.[0-9]{3}"
     done
 }
+
 function praucs() {
     for file in */log*
     do
 		tac "$file" | grep -m 1 -hoE "test split: prAUC sts_death.* 0.[0-9]{3}" | grep -hoE "0.[0-9]{3}"
     done
-}
-
-
-# Function to easily mount;
-# syntax is 'mount $USERNAME $SHORTCUT_FOR_DESTINATION
-# example: mount er498 ml4c3
-function mount() {
-    LOGIN=$1
-    SERVER=//mad3.partners.org
-    GROUP_GROUPNAME=aguirrelab
-    GROUP_USERNAME=aguirrelab
-
-    # Set server within MAD3 and mount point on local machine
-    if [[ "$2" == "ml4c3" ]]; then
-        LABDIR="mgh-neuro-cdac/projects/ml4c3"
-        MOUNTPOINT="/media/ml4c3"
-    elif [[ "$2" == "mad3" ]]; then
-        LABDIR="mgh-neuro-cdac/projects"
-        MOUNTPOINT="/media/mad3"
-    elif [[ "$2" == "lm4" ]]; then
-        LABDIR="PHS-RISC-LM4/ConvertedData/bedmaster"
-        MOUNTPOINT="/media/lm4-bedmaster"
-    elif [[ "$2" == "alarms" ]]; then
-        LABDIR="PHS-RISC-LM4/OriginalData/bedmaster/alarms"
-        MOUNTPOINT="/media/lm4-alarms"
-    elif [[ "$2" == "ecg" ]]; then
-        LABDIR="PHS-RISC-LM4/MUSE_DATA"
-        MOUNTPOINT="/media/lm4-ecg"
-    elif [[ "$2" == "homedrive" ]]; then
-        SERVER="//cifshd.partners.org"
-        LABDIR="homedir$"
-        MOUNTPOINT="/media/$LOGIN"
-    fi
-
-    if [[ "$2" == "erisone" ]]; then
-        SERVER=//eris1fs2.partners.org
-        MOUNTPOINT=/media/erisone
-        sudo mount -t cifs -o user=$LOGIN,uid=$(id -u),gid=$(id -g),vers=1.0 $SERVER/$USER $MOUNTPOINT
-    else
-        sudo mount -t cifs -o user=$LOGIN,uid=$(id -u $GROUP_USERNAME),gid=$(id -g $GROUP_GROUPNAME),noperm,domain=partners $SERVER/$LABDIR $MOUNTPOINT
-    fi
 }
