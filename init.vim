@@ -13,7 +13,7 @@ Plug 'djoshea/vim-autoread'
 Plug 'ervandew/supertab'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'plasticboy/vim-markdown'
-Plug 'psf/black', { 'branch': 'stable' }
+Plug 'psf/black'
 Plug 'ruanyl/vim-gh-line'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
