@@ -18,6 +18,7 @@ Plug 'ruanyl/vim-gh-line'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-python/python-syntax'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 syntax enable
