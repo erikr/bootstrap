@@ -101,3 +101,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+#
+# # Enable command completion for AWS CLI 2
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
