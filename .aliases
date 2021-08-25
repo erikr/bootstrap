@@ -48,7 +48,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Snowflake
     alias snowsql=/home/ubuntu/.snowsql/1.2.15/snowsql
 
-else # $OSTYPE must be darwin* == macos, so put mac-only aliases here
+else # $OSTYPE darwin* == macos, so put mac-only aliases here
     function update () {
         omz update;
         sudo softwareupdate --all --install --force;
@@ -56,8 +56,8 @@ else # $OSTYPE must be darwin* == macos, so put mac-only aliases here
         brew upgrade;
         brew cleanup;
         brew doctor;
-        conda update conda;
-        conda update --all;
+        mamba update conda;
+        mamba update --all;
         conda clean -a;
         sudo purge;
         sudo rm -rf ~/Library/Caches;
