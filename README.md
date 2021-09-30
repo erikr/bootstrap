@@ -36,11 +36,6 @@ Run rest of setup scripts:
 ```
 bash ~/bootstrap/bootstrap-2.sh
 bash ~/bootstrap/bootstrap-vim.sh
-```
-
-Fix broken redirect of repo:
-```
-sed -i 's/$releasever/7/g' /etc/yum.repos.d/docker-ce.r
 bash ~/bootstrap/bootstrap-docker.sh
 ```
 > Source: https://forums.docker.com/t/docker-ce-stable-x86-64-repo-not-available-https-error-404-not-found-https-download-docker-com-linux-centos-7server-x86-64-stable-repodata-repomd-xml/98965/7
