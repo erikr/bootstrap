@@ -21,9 +21,7 @@ Most users should never have to do this; after a machine image is set up, new VM
     chsh -s $(which zsh)
     ```
 
-    Log out, then back in, to reset the password.
-
-1. Install ZSH theme and plugins, Vim plugins, and Miniconda3:
+1. Install ZSH theme and plugins, Vim plugins, brew, neovim: 
     ```
     bash ~/bootstrap/bootstrap-2.sh
     ```

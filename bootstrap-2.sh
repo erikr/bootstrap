@@ -19,15 +19,6 @@ rm -rf zsh-syntax-highlighting
 # tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-
-# Conda & Mamba
-INSTALLER=Miniconda3-latest-$(uname)-$(uname -m).sh
-curl -L -O https://repo.anaconda.com/miniconda/$INSTALLER
-bash $INSTALLER
-~/miniconda3/bin/conda init zsh
-
-rm .bash* .profile .zcompdump* .zshrc.pre-oh-my-zsh $INSTALLER
-
 # Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install neovim
