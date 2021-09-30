@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# OMZ
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # Pure theme
 mkdir -p $HOME/.zsh
 git clone https://github.com/sindresorhus/pure.git $HOME/.zsh/pure

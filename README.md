@@ -21,6 +21,11 @@ Most users should never have to do this; after a machine image is set up, new VM
     chsh -s $(which zsh)
     ```
 
+    Then install Oh-My-ZSH:
+    ```
+    sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    ```
+
 1. Install ZSH theme and plugins, Vim plugins, brew, neovim: 
     ```
     bash ~/bootstrap/bootstrap-2.sh
