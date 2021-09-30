@@ -17,10 +17,8 @@ alias emptytrash="sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl
 # Linux-only aliases
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     function update () {
-        sudo apt update;
-        sudo apt upgrade;
-        sudo apt autoremove;
-        sudo apt clean;
+        sudo yum update -y;
+        sudo yum upgrade;
         conda update conda;
         conda update --all;
         conda clean -a;

@@ -1,4 +1,5 @@
-if [[ $OSTYPE == 'darwin'* ]]; then
+if [[ $OSTYPE == 'darwin'* ]]
+then
     # https://superuser.com/questions/544989/does-tmux-sort-the-path-variable
     # Clear PATH before path_helper executes; will prevent it from prepending the default
     # PATH to your (previously) chosen PATH
@@ -15,6 +16,8 @@ if [[ $OSTYPE == 'darwin'* ]]; then
     export PATH="/usr/local/bin:$PATH"
     export PATH="/usr/local/sbin:$PATH"
     eval $(/opt/homebrew/bin/brew shellenv)
+else
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 DISABLE_MAGIC_FUNCTIONS=true

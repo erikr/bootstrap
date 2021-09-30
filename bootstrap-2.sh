@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install other stuff
+sudo yum groupinstall 'Development Tools'
+sudo yum install util-linux-user zsh tmux tree
+
+# OMZ
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # Pure theme
 mkdir -p $HOME/.zsh
 git clone https://github.com/sindresorhus/pure.git $HOME/.zsh/pure
@@ -16,12 +26,6 @@ rm -rf zsh-syntax-highlighting
 # tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Vim plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
-# Install plugins into neovim
-nvim --headless +PlugInstall +qall
 
 # Conda & Mamba
 INSTALLER=Miniconda3-latest-$(uname)-$(uname -m).sh
@@ -30,3 +34,14 @@ bash $INSTALLER
 ~/miniconda3/bin/conda init zsh
 
 rm .bash* .profile .zcompdump* .zshrc.pre-oh-my-zsh $INSTALLER
+
+# Vim
+brew install neovim
+brew install gcc
+
+# Vim plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# Install plugins into neovim
+nvim --headless +PlugInstall +qall

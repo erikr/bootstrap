@@ -4,7 +4,12 @@ This public repo contains scripts and dotfiles to bootstrap new Ubuntu machines.
 
 Most users should never have to do this; after a machine image is set up, new VMs can be provisioned from that image.
 
-1. Set up symlinks, update `apt`, install basic utils, set up Oh-My-Zsh, and set a password:
+1. Install `git`:
+    ```
+    sudo yum groupinstall 'Development Tools'
+    ```
+
+1. Clone this repo:
     ```
     git clone https://github.com/prometheusbio/bootstrap.git
     bash ~/bootstrap/bootstrap-1.sh
