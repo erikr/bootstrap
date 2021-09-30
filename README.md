@@ -1,6 +1,6 @@
 # bootstrap
 
-This public repo contains scripts and dotfiles to bootstrap new Ubuntu machines.
+This public repo contains scripts and dotfiles to bootstrap new Amazon Linux 2 machines.
 
 Most users should never have to do this; after a machine image is set up, new VMs can be provisioned from that image.
 
