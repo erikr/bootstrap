@@ -32,6 +32,7 @@ Install Oh-My-ZSH:
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+Run rest of setup scripts:
 ```
 bash ~/bootstrap/bootstrap-2.sh
 bash ~/bootstrap/bootstrap-vim.sh

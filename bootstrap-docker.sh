@@ -1,5 +1,4 @@
 #!/bin/bash
-
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
@@ -7,20 +6,12 @@ sudo apt-get install \
     gnupg \
     lsb-release
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+sudo yum install -y yum-utils
 
-echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo yum-config-manager \
+  --add-repo \
+  https://download.docker.com/linux/centos/docker-ce.repo
 
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
-sudo docker run hello-world
+sudo yum install docker-ce docker-ce-cli containerd.io
 
-# Docker compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-
-# Linux post-install to run docker commands without sudo
-sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo systemctl start docker
