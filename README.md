@@ -9,11 +9,12 @@ Most users should never have to do this; after a machine image is set up, new VM
     sudo yum groupinstall 'Development Tools'
     ```
 
-1. Clone this repo:
+1. Clone this repo and run the first setup script:
     ```
     git clone https://github.com/prometheusbio/bootstrap.git
     bash ~/bootstrap/bootstrap-1.sh
     ```
+1. Log out and back in to the machine after changing the password.
 
 1. Change shell to ZSH
     ```

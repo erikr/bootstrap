@@ -1,12 +1,5 @@
 #!/bin/bash
 
-# Install homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Install other stuff
-sudo yum groupinstall 'Development Tools'
-sudo yum install util-linux-user zsh tmux tree
-
 # OMZ
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -35,7 +28,8 @@ bash $INSTALLER
 
 rm .bash* .profile .zcompdump* .zshrc.pre-oh-my-zsh $INSTALLER
 
-# Vim
+# Install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install neovim
 brew install gcc
 
