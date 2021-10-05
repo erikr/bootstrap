@@ -1,3 +1,4 @@
+# macOS paths
 if [[ $OSTYPE == 'darwin'* ]]
 then
     # https://superuser.com/questions/544989/does-tmux-sort-the-path-variable
@@ -16,8 +17,39 @@ then
     export PATH="/usr/local/bin:$PATH"
     export PATH="/usr/local/sbin:$PATH"
     eval $(/opt/homebrew/bin/brew shellenv)
+
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/Users/erik/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/Users/erik/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/Users/erik/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/Users/erik/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+# Amazon Linux 2 paths
 else
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+    __conda_setup="$('/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/opt/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/opt/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
 fi
 
 DISABLE_MAGIC_FUNCTIONS=true
@@ -89,21 +121,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 
 # Add GPG key
 export GPG_TTY=$(tty)
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/erik/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/erik/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/erik/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/erik/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 #
 # # Enable command completion for AWS CLI 2
 autoload bashcompinit && bashcompinit
