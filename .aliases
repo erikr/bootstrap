@@ -42,10 +42,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     
     # Report file system disk space usage, excluding irrelevant file systems
     alias df='df -h -x squashfs -x tmpfs -x devtmpfs'
-
-    # Snowflake
-    alias snowsql=/home/ubuntu/.snowsql/1.2.15/snowsql
-
 else # $OSTYPE darwin* == macos, so put mac-only aliases here
     function update () {
         omz update;
@@ -88,9 +84,6 @@ else # $OSTYPE darwin* == macos, so put mac-only aliases here
 
     # Re-index everything in Spotlight
     alias rebuildspotlight="sudo mdutil -E /"
-    
-    # Snowflake
-    alias snowsql=/Applications/SnowSQL.app/Contents/MacOS/snowsql
 fi
 
 hash -d gd=~"/Google Drive"
@@ -98,11 +91,7 @@ hash -d icloud=~"/Library/Mobile Documents/com~apple~CloudDocs"
 hash -d db=~"/Dropbox (Partners HealthCare)"
 hash -d od=~"/OneDrive - Prometheus Biosciences"
 hash -d dl=~/Downloads
-hash -d ml=~/ml4c3
 hash -d dt=~/Desktop
-hash -d blog=~/erikr.github.io
-hash -d dotfiles=~/dotfiles
-hash -d init.vim=~/dotfiles/init.vim
 
 # Kill GlobalProtect
 function globalprotect() {
