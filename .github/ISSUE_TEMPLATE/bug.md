@@ -2,7 +2,7 @@
 name: Bug report
 about: Something doesn't work.
 title: ''
-labels: "bug \U0001F41B"
+labels: "bug / warning / problem ⚠️"
 assignees: ''
 
 ---
@@ -16,12 +16,16 @@ assignees: ''
 
 ## Error message or warning
 
+
 ## Expected behavior
 
+
 ## Possible solution
+
 
 ## Steps to reproduce
 1.
 2.
 3.
 4.
+
