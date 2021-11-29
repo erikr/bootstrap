@@ -1,13 +1,17 @@
 ---
 name: Documentation
-about: Document workflow or data in Notion (Atlas) or GitHub (README).
+about: Document workflow or data.
 title: ''
 labels: "documentation 📝"
 assignees: ''
 
 ---
 
-## Context
+## What (keep it short)
+
+
+## Why
+
 
 ## Completion criteria
 - [ ] Step 1
@@ -15,5 +19,4 @@ assignees: ''
 
 ## Blocked by or pending
 
-## Expected completion date
 

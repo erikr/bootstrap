@@ -1,8 +1,8 @@
 ---
-name: Infrastructure
-about: New functionality or enhancements.
-title: ''
-labels: "infrastructure 🏗"
+name: Question or Idea
+about: "Question or Idea" 
+title: 'Question or Idea'
+labels: "question ❓/ idea 💡"
 assignees: ''
 
 ---
@@ -18,4 +18,5 @@ assignees: ''
 - [ ] Step 2
 
 ## Blocked by or pending
+
 
