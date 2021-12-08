@@ -17,15 +17,12 @@ assignees: ''
 ## Error message or warning
 
 
+## Steps to reproduce
+
+PLEASE REMOVE THIS TEXT AND ADD A MINIMAL WORKING EXAMPLE
+
+
 ## Expected behavior
 
 
 ## Possible solution
-
-
-## Steps to reproduce
-1.
-2.
-3.
-4.
-
