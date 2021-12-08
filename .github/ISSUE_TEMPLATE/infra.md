@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-## What (keep it short)
+## What
 
 
 ## Why
