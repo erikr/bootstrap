@@ -11,4 +11,4 @@ sudo yum upgrade
 sudo yum install util-linux-user zsh tmux tree
 
 # Change password; we recommend "prometheusbio"
-sudo passwd ec2-user
+sudo passwd $USER
