@@ -8,7 +8,7 @@ sudo yum update -y
 sudo yum upgrade 
 
 # Install misc tools
-sudo yum install util-linux-user zsh tmux tree
+sudo yum install util-linux-user zsh tree
 
 # Change password; we recommend "prometheusbio"
 sudo passwd $USER
