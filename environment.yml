@@ -27,3 +27,4 @@ dependencies:
     - black
     - pre-commit
     - isort
+    - s3fs

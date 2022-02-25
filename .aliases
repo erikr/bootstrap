@@ -24,8 +24,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         conda clean -a;
     }
 
-    # Clean up LaunchServices to remove duplicates in the “Open With” menu,
-    # recursively delete .DS_Store, Icon^M, and .ipynb_checkpoints
+    # Recursively delete .DS_Store, Icon^M, and .ipynb_checkpoints
     alias cleanup="find . \( -type f -name '*.DS_Store' -o -type d -name '.ipynb_checkpoints' -type d -name '.cache' \) -ls -exec rm -rv {} + && find . -name 'Icon' -ls -delete"
 
     # -l: long format
