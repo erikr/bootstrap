@@ -51,15 +51,20 @@ else # $OSTYPE darwin* == macos, so put mac-only aliases here
         brew doctor;
         mamba update conda;
         mamba update --all;
-        conda clean -a;
+        mamba clean -a;
         sudo purge;
-        sudo rm -rf ~/Library/Caches;
-        sudo rm -rf ~/Library/Containers/com.apple.mail/Data/Library/Mail\ Downloads/;
     }
 
     # Clean up LaunchServices to remove duplicates in the “Open With” menu,
     # recursively delete .DS_Store, Icon^M, and .ipynb_checkpoints
-    alias cleanup="find . \( -type f -name '*.DS_Store' -o -type d -name '.ipynb_checkpoints' -type d -name '.cache' \) -ls -exec rm -rv {} + && find . -name 'Icon' -ls -delete && /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder"
+    function cleanup () {
+        find . \( -type f -name '*.DS_Store' -o -type d -name '.ipynb_checkpoints' -type d -name '.cache' \) -ls -exec rm -rv {} +; 
+        find . -name 'Icon' -ls -delete;
+        /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user;
+        killall Finder;
+        sudo rm -rf ~/Library/Caches;
+        sudo rm -rf ~/Library/Containers/com.apple.mail/Data/Library/Mail\ Downloads/;
+    }
 
     # --group-directories-first: self-explanatory
     # --color=auto: use colors
@@ -73,7 +78,8 @@ else # $OSTYPE darwin* == macos, so put mac-only aliases here
 	alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
     alias cpwd="pwd | tr -d '\n' | pbcopy"
 
-    # Save GitHub recovery code to clipboard
+    # Copy GitHub personal access token to clipboard,
+    # enabling me to paste it to terminal via ⌘+v
     PATH_TO_TOKENS="$HOME/Google\ Drive/tokens-and-backups"
     alias ghpat="cat $PATH_TO_TOKENS/github-pat | pbcopy"
 

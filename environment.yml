@@ -28,3 +28,6 @@ dependencies:
     - pre-commit
     - isort
     - s3fs
+    - boto3
+    - pyarrow
+    - xlrd
